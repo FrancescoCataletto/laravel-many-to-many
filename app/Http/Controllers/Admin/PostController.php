@@ -40,7 +40,8 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255|string',
-            'text' => 'required|string|max:255'
+            'text' => 'required|string|max:255',
+            'category_id' => 'nullable'
         ],
         [
             'title.required' => 'Bisogna inserire un titolo',
@@ -100,7 +101,8 @@ class PostController extends Controller
 
         $request->validate([
             'title' => 'required|max:255|string',
-            'text' => 'required|string|max:255'
+            'text' => 'required|string|max:255',
+            'category_id' => 'nullable'
         ],
         [
             'title.required' => 'Bisogna inserire un titolo',
