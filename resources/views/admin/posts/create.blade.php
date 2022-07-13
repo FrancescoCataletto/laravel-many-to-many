@@ -39,7 +39,7 @@
     </div>
 
     <select class="form-select" name="category_id">
-      <option selected>Seleziona una categoria</option>
+      <option value="">Seleziona una categoria</option>
       @foreach ($categories as $category)
         <option value="{{$category->id}}">{{$category->name}}</option>
       @endforeach
