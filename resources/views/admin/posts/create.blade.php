@@ -45,6 +45,19 @@
       @endforeach
     </select>
     
+    <div>
+      @foreach ($tags as $tag)
+        <input type="checkbox" 
+               name="tags[]" 
+               id="{{$tag->id}}"
+        @if (in_array($tag->id, old('tags', [])))
+          cheked
+        @endif
+        value="{{$tag->id}}">
+        <label for="{{$tag->id}}">{{$tag->tag}}</label>
+      @endforeach
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection
