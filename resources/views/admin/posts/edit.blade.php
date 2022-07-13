@@ -48,6 +48,21 @@
       @endforeach
     </select>
     
+    <div>
+      @foreach ($tags as $tag)
+        <input type="checkbox" 
+               name="tags[]" 
+               id="tag{{$loop->iteration}}"
+           @if(!$errors->any() && $post->tags->contains($tag->id))
+               checked
+           @elseif($errors->any() && in_array($tag->id, old('tags', [])))
+               checked
+           @endif
+        value="{{$tag->id}}">
+        <label for="tag{{$loop->iteration}}">{{$tag->tag}}</label>
+      @endforeach
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection
